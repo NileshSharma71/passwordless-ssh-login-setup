@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo sed -i 's@^[#[:space:]]*PermitRootLogin.*@PermitRootLogin yes@' /etc/ssh/sshd_config
 sudo sed -i 's@^[#[:space:]]*PasswordAuthentication.*@PasswordAuthentication yes@' /etc/ssh/sshd_config
-sudo systemctl restart sshd
+sudo systemctl restart ssh
 if [ $? -ne 0 ]; then
     echo "Failed to restart ssh service."
     exit 1
