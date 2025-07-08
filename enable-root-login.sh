@@ -7,6 +7,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 user=$(whoami)
+sudo passwd -u root #if the root account disabled by default in ubuntu machine
 echo "root:hello2323" | sudo chpasswd
 if [ $? -eq 0 ]; then
     echo "password changed for root user."
